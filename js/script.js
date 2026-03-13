@@ -1,4 +1,4 @@
-// simple button interaction
+
 
 const buttons = document.querySelectorAll("button");
 
@@ -12,7 +12,7 @@ buttons.forEach(btn=>{
   });
 });
 
-// hamburger menu toggle (tablet & mobile)
+
 const navToggle = document.querySelector(".nav-toggle");
 const navLinksContainer = document.querySelector(".nav-links");
 
@@ -22,14 +22,14 @@ if(navToggle && navLinksContainer){
   });
 }
 
-// in-page navigation (no new page load)
+
 function scrollToTarget(targetSelector){
   const el = document.querySelector(targetSelector);
   if(!el) return;
   el.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-// Buttons that should scroll to a section
+
 document.querySelectorAll("[data-scroll-target]").forEach(btn => {
   btn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -38,7 +38,7 @@ document.querySelectorAll("[data-scroll-target]").forEach(btn => {
   });
 });
 
-// Navbar shop link
+
 const shopLink = document.querySelector('.nav-links a[href="#shop"]');
 if(shopLink){
   shopLink.addEventListener("click", (e) => {
@@ -47,7 +47,7 @@ if(shopLink){
   });
 }
 
-// Navbar fragrance link (scroll under shop to collection)
+
 const fragranceLink = document.querySelector('.nav-links a[href="#fragrance"]');
 if(fragranceLink){
   fragranceLink.addEventListener("click", (e) => {
@@ -56,7 +56,7 @@ if(fragranceLink){
   });
 }
 
-// Navbar about link (scroll below fragrance to about section)
+
 const aboutLink = document.querySelector('.nav-links a[href="#about"]');
 if(aboutLink){
   aboutLink.addEventListener("click", (e) => {
@@ -65,7 +65,7 @@ if(aboutLink){
   });
 }
 
-// Navbar blog link (scroll below about to blog comparison)
+
 const blogLink = document.querySelector('.nav-links a[href="#blog"]');
 if(blogLink){
   blogLink.addEventListener("click", (e) => {
@@ -74,7 +74,7 @@ if(blogLink){
   });
 }
 
-// Navbar contact link (scroll below blog to contact section)
+
 const contactLink = document.querySelector('.nav-links a[href="#contact"]');
 if(contactLink){
   contactLink.addEventListener("click", (e) => {
@@ -83,7 +83,7 @@ if(contactLink){
   });
 }
 
-// Shop gallery (main slider + thumbnails)
+
 document.querySelectorAll(".shop-page").forEach((shopSection) => {
   const mainImg = shopSection.querySelector(".main-product-img");
   const left = shopSection.querySelector(".gallery-arrow-left");
@@ -93,10 +93,10 @@ document.querySelectorAll(".shop-page").forEach((shopSection) => {
   if (!mainImg) return;
 
   const slides = [
-  "assets/original.png",   // Original
-  "assets/lily.png",       // Lily
-  "assets/rose.png",       // Rose
-  "assets/One Time.png"    // All together on neutral
+  "assets/original.png",   
+  "assets/lily.png",       
+  "assets/rose.png",       
+  "assets/One Time.png"    
   ];
 
   let idx = 0;
@@ -114,7 +114,7 @@ document.querySelectorAll(".shop-page").forEach((shopSection) => {
 
     const mainContainer = mainImg.closest(".main-product");
     if (mainContainer){
-      // clear all background variants first
+      
       mainContainer.classList.remove(
         "bg-original",
         "bg-lily",
@@ -122,7 +122,7 @@ document.querySelectorAll(".shop-page").forEach((shopSection) => {
         "bg-onetime"
       );
 
-      // apply background that best matches each bottle
+      
       if (idx === 0){
         mainContainer.classList.add("bg-original");
       } else if (idx === 1){
@@ -136,7 +136,7 @@ document.querySelectorAll(".shop-page").forEach((shopSection) => {
     setActiveDot(idx);
   }
 
-  // Fragrance option active state (visual match)
+  
   const fragOptions = Array.from(shopSection.querySelectorAll(".frag-option"));
   fragOptions.forEach((opt) => {
     opt.addEventListener("click", () => {
@@ -145,7 +145,7 @@ document.querySelectorAll(".shop-page").forEach((shopSection) => {
     });
   });
 
-  // Map radio selection to gallery images (Original -> Lily -> Rose)
+  
   const fragRadios = Array.from(shopSection.querySelectorAll('.frag-option input[type="radio"]'));
   fragRadios.forEach((radio) => {
     radio.addEventListener("change", () => {
@@ -161,12 +161,12 @@ document.querySelectorAll(".shop-page").forEach((shopSection) => {
   if (left) left.addEventListener("click", () => setSlide(idx - 1));
   if (right) right.addEventListener("click", () => setSlide(idx + 1));
 
-  // Dots click
+ 
   dots.forEach((dot, i) => {
     dot.addEventListener("click", () => setSlide(i));
   });
 
-  // initial
+  
   setSlide(0);
 });
 
@@ -212,7 +212,7 @@ document.querySelectorAll(".purchase-card").forEach((card) => {
       ? selectedFragInput.closest(".frag-option")?.querySelector(".frag-label")?.textContent?.trim()
       : "Original";
 
-    // Basic pricing taken from page content
+    
     const price = plan === "double" ? 169.99 : 99.99;
 
     const storageKey = plan === "double" ? "cart_double" : "cart_single";
@@ -237,7 +237,7 @@ document.querySelectorAll(".purchase-card").forEach((card) => {
     existing.push(newItem);
     localStorage.setItem(storageKey, JSON.stringify(existing));
 
-    // Redirect to cart page specific to plan
+    // Redirect to cart page 
     window.location.href = `cart.html?plan=${plan}`;
   });
 })();
@@ -320,7 +320,7 @@ item.querySelector(".accordion-icon").textContent="−";
 
     observer.observe(statsSection);
   } else {
-    // Fallback: animate immediately
+    
     resetAndAnimate();
   }
 })();
