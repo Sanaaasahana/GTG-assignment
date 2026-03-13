@@ -86,7 +86,7 @@
     gap:32.36px;
     }
 
-    /* hamburger toggle (hidden on desktop) */
+    /* hamburger toggle*/
     .nav-toggle{
     display:none;
     width:32px;
@@ -148,7 +148,7 @@
    padding-top:150px;
    }
 
-   /* (removed) shop-section styles - using existing shop-page layout */
+   
     
     .hero-content{
     max-width:600px;
@@ -310,7 +310,7 @@
         display:block;
         }
 
-        /* slide-specific backgrounds - first three slightly grey, last pure white */
+        
         .main-product.bg-original{
         background:#f7f7f7;
         }
@@ -646,7 +646,7 @@
     display:block;
     }
  
-    /* one-time image uses full width */
+    
     .included-box .included-box-media img[alt="One time set"]{
     max-width:100%;
     max-height:100%;
@@ -971,7 +971,7 @@
 
 .comparison-table{
     width:900px;
-    position:relative; /* for continuous GTG highlight band */
+    position:relative; 
 }
 
 .table-row{
@@ -1032,13 +1032,13 @@
 
 /* HIGHLIGHT COLUMN */
 
-/* single continuous light green band behind GTG column */
+
 .comparison-table::before{
     content:"";
     position:absolute;
     top:0;
     bottom:0;
-    left:220px; /* width of qualities column */
+    left:220px; 
     width:calc((100% - 220px) / 4);
     background:#eaf3ec;
     border-left:1px dashed #b7c7b9;
@@ -1048,7 +1048,7 @@
     z-index:-1;
 }
 
-/* keep highlight class for semantics but without breaking the band */
+
 .highlight{
     background:transparent;
 }
@@ -1065,13 +1065,13 @@
     background-size:20px 20px;
 }
 
-/* use tick.svg for highlighted GTG column circles */
+
 .table-row .col.highlight .circle{
     border:none;
     background-image:url("../assets/tick.svg");
 }
 
-/* use cross.png for all other circles */
+
 .table-row .col:not(.highlight) .circle{
     border:none;
     background-image:url("../assets/cross.png");
@@ -1097,7 +1097,7 @@
 
 /* ================== RESPONSIVE LAYOUT ================== */
 
-/* Tablet: collapse shop layout, scale hero, prepare navbar */
+
 @media (max-width: 1200px){
 
     .navbar{
@@ -1189,7 +1189,7 @@
     }
 }
 
-/* Mobile: stack hero and simplify spacing */
+
 @media (max-width: 768px){
 
     .hero{
